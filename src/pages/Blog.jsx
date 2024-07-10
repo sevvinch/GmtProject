@@ -1,115 +1,113 @@
-// import React from "react";
-// import { MdNavigateNext } from "react-icons/md";
-// import { Link } from "react-router-dom";
-
-// const Blog = () => {
-//   const sections = [
-//     {
-//       title: 'Новая модель организационной деятельности',
-//       content: `Равным образом, внедрение современных методик создает
-//                 необходимость включения в производственный план целого ряда
-//                 внеочередных мероприятий с учетом комплекса направлений
-//                 прогрессивного развития. Сложно сказать, почему акционеры
-//                 крупнейших компаний указаны как претенденты на роль ключевых
-//                 факторов. Кстати, представители современных социальных резервов
-//                 призваны к ответу.`,
-//       images: ['/assets/image3-min.png', '/assets/image1-min.png'],
-//     },
-//     {
-//       title: 'Новая модель организационной деятельности',
-//       content: `Равным образом, внедрение современных методик создает
-//                 необходимость включения в производственный план целого ряда
-//                 внеочередных мероприятий с учетом комплекса направлений
-//                 прогрессивного развития. Сложно сказать, почему акционеры
-//                 крупнейших компаний указаны как претенденты на роль ключевых
-//                 факторов. Кстати, представители современных социальных резервов
-//                 призваны к ответу.`,
-//       images: ['/assets/image2-min.png', '/assets/image3-min.png'],
-//     },
-//     {
-//       title: 'Новая модель организационной деятельности',
-//       content: `Равным образом, внедрение современных методик создает
-//                 необходимость включения в производственный план целого ряда
-//                 внеочередных мероприятий с учетом комплекса направлений
-//                 прогрессивного развития. Сложно сказать, почему акционеры
-//                 крупнейших компаний указаны как претенденты на роль ключевых
-//                 факторов. Кстати, представители современных социальных резервов
-//                 призваны к ответу.`,
-//       images: ['/assets/image1-min.png', '/assets/image2-min.png'],
-//     },
-//   ];
-
-//   return (
-//     <div className="container mx-auto px-4">
-//       <p className="flex items-center mt-5 gap-3">
-//         <Link to="/" className="text-[#7A7687]">
-//           Главная
-//         </Link>
-//         <MdNavigateNext />
-//         <span className="text-black">Блог</span>
-//       </p>
-
-//       <div className="mt-10 bg-white py-10 rounded-2xl px-4 md:px-8">
-//         <h1 className="text-3xl mb-4">Информационная статья</h1>
-//         <p className="text-gray-500 mb-2">Автор: Admin</p>
-//         <div className="mb-8">
-//           <h2 className="text-xl mb-2">Содержание:</h2>
-//           <ul className="list-disc list-inside text-gray-600">
-//             <li>Новая модель организационной деятельности</li>
-//             <li>Тенденции и перспективы</li>
-//             <li>Заключение</li>
-//           </ul>
-//         </div>
-
-//         {sections.map((section, index) => (
-//           <div key={index} className="mb-8">
-//             <h2 className="text-2xl mb-4">{section.title}</h2>
-//             <p className="text-gray-700 mb-4 lg:w-[70%] my-5">
-//               {section.content}
-//             </p>
-//             <div className="flex flex-col md:flex-row gap-5">
-//               {section.images.map((image, idx) => (
-//                 <img
-//                   key={idx}
-//                   src={image}
-//                   alt={`image${idx + 1}`}
-//                   className="md:w-[47%] w-full mb-4"
-//                 />
-//               ))}
-//             </div>
-//           </div>
-//         ))}
-
-//         <div className="py-8 px-5 bg-[#E1EFE6] my-8 rounded-lg">
-//           <p className="text-gray-700 mb-4 my-5">
-//             Равным образом, внедрение современных методик создает необходимость
-//             включения в производственный план целого ряда внеочередных
-//             мероприятий с учетом комплекса направлений прогрессивного развития.
-//             Сложно сказать, почему акционеры крупнейших компаний указаны как
-//             претенденты на роль ключевых факторов. Кстати, представители
-//             современных социальных резервов призваны к ответу.
-//           </p>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Blog;
-
-
-
-import React from 'react'
+import React, { useState } from 'react';
+import { RiArrowRightSLine } from 'react-icons/ri';
+import { Link, NavLink } from 'react-router-dom';
+import Data from '../data/news';
+import { GoChevronRight } from 'react-icons/go';
+import ReactPaginate from 'react-paginate';
+import Subscription from '../components/Subscription';
 import Header from '../components/header/Header'
 import Footer from '../components/Footer'
 
 const Blog = () => {
-  return (
-    <div>
-        <Header/>
-        <Footer/>
-    </div>
-  )
-}
+  const [currentPage, setCurrentPage] = useState(0);
+  const itemsPerPage = 4;
 
-export default Blog
+  const handlePageChange = ({ selected }) => {
+    setCurrentPage(selected);
+  };
+
+  const offset = currentPage * itemsPerPage;
+  const currentItems = Data.slice(offset, offset + itemsPerPage);
+  const pageCount = Math.ceil(Data.length / itemsPerPage);
+
+  return (
+    <div className="bg-[#F8F7F3]">
+      <Header/>
+      <div className="container pb-[100px]">
+        <div className="flex items-center gap-2 pb-[40px] pt-[20px] text-[16px] font-normal">
+          <Link to={'/'} className="text-[#7A7687]">
+            Главная
+          </Link>
+          <RiArrowRightSLine className="text-[20px] text-[#7A7687]" />
+          <NavLink to={'/blog'} className="">
+            Блог
+          </NavLink>
+        </div>
+        <div className="flex justify-between">
+          <div className="w-[25%] h-[50%] border rounded-lg p-5">
+            <h3 className="text-[18px] text-[#202020] border-b-[1px] border-[#E5E2EE] pb-[10px]">
+              Направления
+            </h3>
+            {Data.map((data, index) => (
+              <div key={index} className="">
+                <div className="flex flex-col pt-[10px]">
+                  <h4 className="flex justify-between text-[16px] text-[#202020] cursor-pointer">
+                    {data.direction} <GoChevronRight />
+                  </h4>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="w-[70%] flex flex-col gap-4">
+            {currentItems.map((data, index) => (
+              <div
+                key={index}
+                className="blog h-[304px] border border-[#E5E2EE] rounded-xl flex"
+              >
+                <div className="w-[40%]">
+                  <img
+                    src={data.image}
+                    alt={data.alt}
+                    className="w-[430px] h-full rounded-l-xl"
+                  />
+                </div>
+
+                <div className="w-[60%] p-[25px] bg-white rounded-r-xl">
+                  <h4 className="text-[18px] font-semibold text-[#202020]">
+                    {data.title1}
+                  </h4>
+                  <span className="text-[12px] text-[#7A7687] font-normal">
+                    {data.time}
+                  </span>
+                  <p className="pt-[25px] mb-[70px] text-[16px] font-medium text-[#7A7687]">
+                    {data.text}
+                  </p>
+                  <NavLink
+                    to={'/blog/informatsioniy-statya'}
+                    className=" px-4 py-2 text-[14px] text-[#088269] font-semibold rounded-full border border-[#D5D1E1]"
+                  >
+                    Подробнее
+                  </NavLink>
+                </div>
+              </div>
+            ))}
+            <ReactPaginate
+              previousLabel={'<'}
+              nextLabel={'>'}
+              breakLabel={'...'}
+              pageCount={pageCount}
+              marginPagesDisplayed={2}
+              pageRangeDisplayed={3}
+              onPageChange={handlePageChange}
+              containerClassName={'pagination'}
+              activeClassName={'active'}
+              pageClassName={'page-item'}
+              previousClassName={'page-item'}
+              nextClassName={'page-item'}
+              breakClassName={'page-item'}
+              pageLinkClassName={'page-link'}
+              previousLinkClassName={'page-link'}
+              nextLinkClassName={'page-link'}
+              breakLinkClassName={'page-link'}
+              activeLinkClassName={'active'}
+            />
+          </div>
+        </div>
+      </div>
+      <Subscription />
+      <Footer/>
+    </div>
+  );
+};
+
+export default Blog;

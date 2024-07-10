@@ -103,7 +103,7 @@ const Payment = () => {
           </p>
         </div>
 
-        <div className="mt-10 py-10 rounded-2xl px-4 md:px-8 bg-gray-50 shadow-md">
+        <div className="mt-10 py-10 rounded-2xl px-4 md:px-8  ">
           <h1 className="text-3xl mb-4 font-bold">Оплата</h1>
           <p className="text-gray-700 mb-8 w-full md:w-1/2">
             Учитывая стремительное развитие цифровых медицинских технологий,

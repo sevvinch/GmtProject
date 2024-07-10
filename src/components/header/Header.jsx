@@ -13,7 +13,7 @@ const navItems = [
   { to: '/', icon: <FaRegUser />, label: 'Войти' },
   { to: '/', icon: <GoHeart />, label: 'Избранное' },
   { to: '/', icon: <IoStatsChartOutline />, label: 'Сравнить' },
-  { to: '/', icon: <HiOutlineShoppingCart />, label: 'Корзина' },
+  { to: '/basket', icon: <HiOutlineShoppingCart />, label: 'Корзина' },
 ];
 
 const categories = [
@@ -76,9 +76,9 @@ const Header = () => {
                 <input
                   type="text"
                   placeholder="Поиск"
-                  className="bg-[#F8F7F3] px-4 w-[400px] outline-none"
+                  className="bg-[#F8F7F3] px-4 w-[400px] outline-none "
                 />
-                <button className="h-[38px] w-[50px] flex items-center text-[15px] text-[#7A7687] rounded-r-full bg-[#D5D1E1] left-2 relative">
+                <button className="h-[38px] w-[50px] flex items-center text-[15px] text-[#7A7687] rounded-r-full rounded-l-full  bg-[#D5D1E1]  left-2 relative">
                   <RiSearchLine className="text-[#7A7687] ml-5" />
                 </button>
               </div>

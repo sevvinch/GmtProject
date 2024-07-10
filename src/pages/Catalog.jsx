@@ -1,47 +1,48 @@
-import React from 'react'
-import { Link, NavLink } from 'react-router-dom';
-import { MdChevronRight } from 'react-icons/md';
+import { Link } from 'react-router-dom';
+import CatalogSection from '../components/catalog/CatalogSection';
+import CatalogTitle from '../components/catalog/CatalogTitle';
+import Accordion from '../components/Accordion';
+import Brands from '../components/Brands';
+import Footer from '../components/Footer';
+import Subscription from '../components/Subscription';
+import Formm from '../components/Formm';
+import News from '../components/News';
+import Equipments from '../components/Equipments';
+import Offers from '../components/Offers';
+import Products from '../components/Products';
+import { MdKeyboardArrowRight } from 'react-icons/md';
 import Header from '../components/header/Header'
-import Footer from '../components/Footer'
-import CategoriesCatalog from '../components/catalog/CatalogCategories'
-import Equipments from '../components/Equipments'
-import Offers from '../components/Offers'
-import Products from '../components/Products'
-import Brands from '../components/Brands'
-// import News from '../components/News'
-import Accordion from '../components/Accordion'
-import Formm from '../components/Formm'
-import Subscription from  '../components/Subscription'
 
 const Catalog = () => {
   return (
-    <div>
+    <>
       <Header />
-      <div className="container">
-        <div className="flex items-center gap-2 py-5 text-[16px] font-normal">
-          <Link to={'/'} className="text-[#7A7687]">
-            Главная
-          </Link>
-          <span className="text-[#7A7687]">
-            <MdChevronRight />
+      <div className=" container flex pt-[20px] gap-2 custom-text ">
+        <Link to={'/'}>
+          <span className="text-[#202020] cursor-pointer  flex items-center gap-2 ">
+            Главная <MdKeyboardArrowRight className="w-[20px] h-[20px] " />
           </span>
-          <NavLink to={'/katalog'} className="">
+        </Link>
+        <Link>
+          <span className="text-[#7A7687] font-medium cursor-pointer  flex items-center gap-2 ">
             Каталог
-          </NavLink>
-        </div>
+          </span>
+        </Link>
       </div>
-      <CategoriesCatalog />
+
+      <CatalogTitle />
+      <CatalogSection />
       <Equipments />
       <Offers />
       <Products />
       <Brands />
-      {/* <News/> */}
+      <News />
       <Accordion />
       <Formm />
       <Subscription />
       <Footer />
-    </div>
+    </>
   );
-}
+};
 
-export default Catalog
+export default Catalog;

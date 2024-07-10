@@ -17,7 +17,7 @@ const DeliveryInformation = () => {
           referrerPolicy="no-referrer-when-downgrade"
           className=" rounded-lg w-full h-64 md:h-80 lg:h-96 "
         ></iframe>
-        <button className="absolute bottom-4 right-4 lg:bottom-5 lg:right-5 bg-green-600 rounded-full px-5 py-2 text-sm md:px-8 md:py-3 lg:px-10 lg:py-4 text-white font-semibold">
+        <button className="absolute bottom-4 right-4 lg:bottom-5 lg:right-5 bg-[#088269] rounded-full px-5 py-2 text-sm md:px-8 md:py-3 lg:px-10 lg:py-4 text-white font-semibold">
           Пункт выдачи
         </button>
       </div>

@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react';
+import { NavLink } from 'react-router-dom';
 import { GoArrowLeft, GoArrowRight } from 'react-icons/go';
 import Data from './../data/brands';
 
@@ -67,9 +68,11 @@ const Brands = () => {
               </div>
 
               <div className="mr-[100px] flex gap-4 justify-items-end">
-                <button className="transition duration-300 flex justify-center items-center px-6 py-[11px] rounded-full font-semibold text-[16px] text-white bg-[#088269] border-none">
-                  Сертификаты
-                </button>
+                <NavLink to="/about/Sertificats">
+                  <button className="transition duration-300 flex justify-center items-center px-6 py-[11px] rounded-full font-semibold text-[16px] text-white bg-[#088269] border-none">
+                    Сертификаты
+                  </button>
+                </NavLink>
               </div>
             </div>
           </div>

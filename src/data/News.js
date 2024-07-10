@@ -1,80 +1,43 @@
-import news1 from "./../../public/assets/news/img1.png";
-import news2 from "./../../public/assets/news/img1.png";
-import news3 from "./../../public/assets/news/img1.png";
-import news4 from "./../../public/assets/news/img1.png";
-import news5 from "./../../public/assets/news/img1.png";
-import news6 from "./../../public/assets/news/img1.png";
-import news7 from "./../../public/assets/news/img1.png";
-
-export default [
-  {
-    id: 1,
-    title: "Название новости",
-    desc: "Допускает внедрение поэтапного и развития общества.",
-    time: " 21.11.2023 	",
-    image: news1,
-  },
-  {
-    id: 2,
-    title: "Название новости",
-    desc: "Допускает внедрение поэтапного и развития общества.",
-    time: " 21.11.2023 	",
-    image: news2,
-  },
-  {
-    id: 3,
-    title: "Название новости",
-    desc: "Допускает внедрение поэтапного и развития общества.",
-    time: " 21.11.2023 	",
-    image: news3,
-  },
-  {
-    id: 4,
-    title: "Название новости",
-    desc: "Допускает внедрение поэтапного и развития общества.",
-    time: " 21.11.2023 	",
-    image: news4,
-  },
-  {
-    id: 5,
-    title: "Название новости",
-    desc: "Допускает внедрение поэтапного и развития общества.",
-    time: " 21.11.2023 	",
-    image: news5,
-  },
-  {
-    id: 6,
-    title: "Название новости",
-    desc: "Допускает внедрение поэтапного и развития общества.",
-    time: " 21.11.2023 	",
-    image: news6,
-  },
-  {
-    id: 7,
-    title: "Название новости",
-    desc: "Допускает внедрение поэтапного и развития общества.",
-    time: " 21.11.2023 	",
-    image: news3,
-  },
-  {
-    id: 8,
-    title: "Название новости",
-    desc: "Допускает внедрение поэтапного и развития общества.",
-    time: " 21.11.2023 	",
-    image: news2,
-  },
-  {
-    id: 9,
-    title: "Название новости",
-    desc: "Допускает внедрение поэтапного и развития общества.",
-    time: " 21.11.2023 	",
-    image: news7,
-  },
-  {
-    id: 10,
-    title: "Название новости",
-    desc: "Допускает внедрение поэтапного и развития общества.",
-    time: " 21.11.2023 	",
-    image: news1,
-  },
+const images = [
+  "./../../public/assets/news/img1.png",
+  "./../../public/assets/news/img2.png",
+  "./../../public/assets/news/img3.png",
+  "./../../public/assets/news/img4.png",
+  "./../../public/assets/news/img5.png",
+  "./../../public/assets/news/img6.png",
+  "./../../public/assets/news/img7.png",
+  "./../../public/assets/news/img8.png",
 ];
+
+const directions = [
+  "Реанимация",
+  "Хирургия",
+  "Офтальмология",
+  "Лабораторная диагностика",
+  "Акушерство и Гинекология",
+  "Гистология",
+  "Косметология",
+  "Оториноларингология",
+  "Рентгенология и томография",
+  "Стерилизация",
+  "Физиотерапия и реабилитация",
+  "Функциональная диагностика",
+  "Эндоскопия",
+];
+
+const createNewsItem = (id, direction, image) => ({
+  id,
+  title: "Название новости",
+  title1: "Что такое инфузомат (инфузионный насос)",
+  desc: "Допускает внедрение поэтапного и развития общества.",
+  text: "Обеспечение нашей деятельности требует определения и уточнения распределения внутренних резервов и ресурсов. Каждый из нас понимает очевидную вещь.",
+  time: "21.11.2023",
+  direction,
+  image,
+});
+
+const newsItems = directions.map((direction, index) => 
+  createNewsItem(index + 1, direction, images[index % images.length])
+);
+
+export default newsItems;

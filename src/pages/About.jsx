@@ -7,7 +7,6 @@ import Doctors from '../components/about/Doctors';
 import Clients from '../components/Clients';
 import Offers from '../components/Offers';
 import Brends from '../components/Brands';
-import Certificats from '../components/about/Sertificats';
 import Location from '../components/Formm';
 import Header from '../components/header/Header';
 import Footer from '../components/Footer';
@@ -18,7 +17,7 @@ const About = () => {
   }, []);
 
   const breadcrumb = (
-    <div className="md:px-5 lg:px-4">
+    <div className="container md:px-5 lg:px-4">
       <div className="mb-5 flex items-center gap-2 py-5">
         <Link to="/" className="text-sm font-normal text-[#7A7687]">
           Главная
@@ -36,7 +35,6 @@ const About = () => {
     <Clients />,
     <Offers />,
     <Brends />,
-    <Certificats />,
     <Location />,
   ];
 

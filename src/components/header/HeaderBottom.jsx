@@ -8,7 +8,6 @@ const navLinks = [
   { to: '/kabinet-podklyuch', text: 'Кабинеты под ключ' },
   { to: '/servisi', text: 'Услуги' },
   { to: '/aktsiya', text: 'Акции' },
-  { to: '/pokupatel', text: 'Покупателям' },
   { to: '/kontakt', text: 'Контакты' },
 ];
 

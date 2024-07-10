@@ -1,6 +1,8 @@
 import { useState, useMemo } from 'react';
+import { NavLink } from 'react-router-dom';
+
 import { GoArrowLeft, GoArrowRight } from 'react-icons/go';
-import Data from './../data/News';
+import Data from './../data/news';
 
 const News = () => {
   const [startIndex, setStartIndex] = useState(0);
@@ -74,9 +76,11 @@ const News = () => {
               </div>
 
               <div className="mr-[100px] flex justify-items-end">
-                <button className="transition duration-300 flex justify-center items-center px-6 py-[11px] rounded-full font-manrope font-semibold text-[16px] text-white bg-[#088269] border-none">
-                  Все новости
-                </button>
+                <NavLink to="/informatsioniy-statya">
+                  <button className="transition duration-300 flex justify-center items-center px-6 py-[11px] rounded-full font-manrope font-semibold text-[16px] text-white bg-[#088269] border-none">
+                    Все новости
+                  </button>
+                </NavLink>
               </div>
             </div>
           </div>

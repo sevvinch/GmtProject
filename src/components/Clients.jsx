@@ -21,10 +21,10 @@ const clients = [
 
 const Clients = () => {
   return (
-    <div className="mb-[150px]">
-      <div className="container">
-        <div className="flex justify-between py-[10%]">
-          <h1 className="text-[30px] font-medium text-[#202020]">
+    <div className="mb-[150px] bg-[#E5E4ED]">
+      <div className="container ">
+        <div className="flex justify-between mt-[100px] pt-[100px]">
+          <h1 className="text-[30px] font-medium text-[#202020]  mb-[170px]">
             Наши клиенты
           </h1>
           <h2 className="text-[#202020] text-[48px] font-medium">
@@ -40,7 +40,7 @@ const Clients = () => {
             key={index}
             className="xl:w-[95%] h-[100%] border border-[#F8F7F3] bg-[#F8F7F3] rounded-lg"
           >
-            <div className="bg-white p-8 ">
+            <div className="bg-white border-b border-[#E5E2EE] p-8 ">
               <img
                 src={client.img}
                 alt=""

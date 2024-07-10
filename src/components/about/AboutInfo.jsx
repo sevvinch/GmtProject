@@ -9,7 +9,7 @@ const AboutInfo = () => {
   ];
 
   return (
-    <div className="px-4 md:px-5 lg:px-4">
+    <div className="container px-4 md:px-5 lg:px-4">
       <div>
         <div className="mb-[25px] lg:mb-10">
           <img

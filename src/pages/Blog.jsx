@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { RiArrowRightSLine } from 'react-icons/ri';
 import { Link, NavLink } from 'react-router-dom';
-import Data from './../data/news';
 import { GoChevronRight } from 'react-icons/go';
 import ReactPaginate from 'react-paginate';
 import Subscription from '../components/Subscription';
-import Header from '../components/header/Header'
-import Footer from '../components/Footer'
+import Header from '../components/header/Header';
+import Footer from '../components/Footer';
+import Data from './../data/news';
 
 const Blog = () => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -22,7 +22,7 @@ const Blog = () => {
 
   return (
     <div className="bg-[#F8F7F3]">
-      <Header/>
+      <Header />
       <div className="container pb-[100px]">
         <div className="flex items-center gap-2 pb-[40px] pt-[20px] text-[16px] font-normal">
           <Link to={'/'} className="text-[#7A7687]">
@@ -105,7 +105,7 @@ const Blog = () => {
         </div>
       </div>
       <Subscription />
-      <Footer/>
+      <Footer />
     </div>
   );
 };

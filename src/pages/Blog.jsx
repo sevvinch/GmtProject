@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { RiArrowRightSLine } from 'react-icons/ri';
 import { Link, NavLink } from 'react-router-dom';
-import Data from '../data/news';
+import Data from './../data/news';
 import { GoChevronRight } from 'react-icons/go';
 import ReactPaginate from 'react-paginate';
 import Subscription from '../components/Subscription';
